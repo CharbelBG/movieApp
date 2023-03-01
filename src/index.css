@@ -4,6 +4,10 @@
     font-family: sans-serif;
 }
 :root{
-    --blueColor: rgb(5, 5, 66);
+    --blueColor: rgb(5, 26, 70);
     --orangeColor: rgb(255, 119, 0);
 }
+
+/* body{
+    background-color: black;
+} */
