@@ -5,17 +5,17 @@ import axios from 'axios';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-
+ 
 /*
  * 1 consume the api
  * must have a slider swiper.js
  * tv shows or movies select ratio
  * must have cards
 */
-
 export default function Home(){
-const [popularData, setPopularData] = useState([]);
 
+const [popularData, setPopularData] = useState([]);
+ 
 useEffect( ()=>{
     getPopular();
 },[]);
@@ -28,30 +28,31 @@ async function getPopular(){
     }catch(e){
         console.log(e);
     }       
-}
+}   
+    const renderSlider = popularData.map((movie, index)=>{
+        return  <SwiperSlide key={index}>
+            <Card    voteAverage = {movie?.vote_average}
+             title = {movie?.title}
+                poster = {movie?.poster_path} />
+        </SwiperSlide>
+    });
  
 return (
 <>
-
-    <Card releaseDate = {popularData[0]?.release_date} voteAverage = {popularData[0]?.vote_average}
-    title = {popularData[0]?.title} popularity = {popularData[0]?.popularity}
-     poster = {popularData[0]?.poster_path} />
-
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-    </Swiper>
+    <div className='homeSliderContainer'>
+        <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={50}
+        slidesPerView={4}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        //   onSwiper={(swiper) => console.log(swiper)}
+        //   onSlideChange={() => console.log('slide change')}
+        >
+        {renderSlider}
+        </Swiper>
+    </div> 
 </>
 )
 }
