@@ -1,21 +1,17 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState, useEffect, useRef} from 'react';
 import './home.css';
 import Card from '../components/Card';
 import axios from 'axios';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import 'swiper/css';
- 
-/*
- * 1 consume the api
- * must have a slider swiper.js
- * tv shows or movies select ratio
- * must have cards
-*/
+
+import {register} from 'swiper/element/bundle';
+
+register(); 
+
 export default function Home(){
 
 const [popularData, setPopularData] = useState([]);
- 
+const swiperElRef = useRef(null);
+
 useEffect( ()=>{
     getPopular();
 },[]);
@@ -30,28 +26,21 @@ async function getPopular(){
     }       
 }   
     const renderSlider = popularData.map((movie, index)=>{
-        return  <SwiperSlide key={index}>
-            <Card    voteAverage = {movie?.vote_average}
-             title = {movie?.title}
+        return  <swiper-slide key={index}>
+            <Card 
+                voteAverage = {movie?.vote_average}
+                title = {movie?.title}
                 poster = {movie?.poster_path} />
-        </SwiperSlide>
+        </swiper-slide>
     });
  
 return (
 <>
     <div className='homeSliderContainer'>
-        <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
-        slidesPerView={4}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        //   onSwiper={(swiper) => console.log(swiper)}
-        //   onSlideChange={() => console.log('slide change')}
-        >
+        <swiper-container ref={swiperElRef} slides-per-view="3"
+            navigation="true" pagination="true">
         {renderSlider}
-        </Swiper>
+        </swiper-container>
     </div> 
 </>
 )

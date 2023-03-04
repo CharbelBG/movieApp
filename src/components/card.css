@@ -2,7 +2,6 @@
     width: fit-content;
     position: relative;
     border-radius: 1rem;
-    /* border: 2px solid red; */
 }
 .cardContainer::after{
     content: '';
@@ -49,12 +48,20 @@
     transform: scaleY(0%);
     transform-origin: bottom;
     z-index: 2;
-    align-items: center;
+    text-align: center;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 
+.rating{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    line-height: 1rem;
+}
 
 .rating img{
-    height: 25px;
+    width: 1rem;
 }
