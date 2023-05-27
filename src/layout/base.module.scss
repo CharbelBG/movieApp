@@ -19,12 +19,12 @@
             align-items: center;
             gap: 1rem;
             border-bottom: 1px solid $greyColor;
-
+            height: 5rem;
             img{    
                 height: 3rem;
             }
 
-            span{
+            a{
                 font-size: 1rem;
                 font-weight: 900;
                 background-image: linear-gradient(to right, $yellowColor, $orangeColor);
@@ -44,13 +44,20 @@
             gap: 1rem;
             color: white;
 
-            div{
+            a{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                padding: .5rem;
                 padding-left: 1rem;
                 gap: 1rem;
                 border-left: 4px solid transparent;
+                text-decoration: none;
+                color: white;
+
+                &:global.active{
+                    background-image: linear-gradient(to right, $yellowColor, $orangeColor);
+                }
 
                 &:hover{
                     border-left: 4px solid white;
@@ -62,7 +69,7 @@
                     width: 2rem;
                     fill: white;
                 }
-               
+                 
             }
             
             
@@ -90,6 +97,7 @@
             gap: 1rem;
             align-items: center;
             justify-content: space-around;
+            height: 5rem;
             input{
                 background-color: $greyColor;
                 width: 60%;
@@ -106,4 +114,3 @@
         }
     }
 }
- 
