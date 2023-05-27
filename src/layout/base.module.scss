@@ -6,7 +6,7 @@
     width: 100%;
  
     .navigation{
-        width: 20%;
+        width: max-content;
         min-height: 100vh;
         background-color: $blackPrimary;
         color: $orangeColor;
@@ -32,9 +32,48 @@
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
                 color: transparent;
+                white-space: nowrap;
             }
 
         }
+
+        .navMenu{
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            color: white;
+
+            div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-left: 1rem;
+                gap: 1rem;
+                border-left: 4px solid transparent;
+
+                &:hover{
+                    border-left: 4px solid white;
+                    cursor: pointer;
+                }
+
+                svg{
+                    height: 2rem;
+                    width: 2rem;
+                    fill: white;
+                }
+               
+            }
+            
+            
+
+            hr{
+                border: none;
+                border-top: 1px solid $greyColor;                
+            }
+        }
+
+    
     }
 
 
@@ -43,7 +82,28 @@
         background-color: $blackSecondary;
         color: white;
         .header{
+            padding: 1rem;
+            border-bottom: 1px solid $greyColor;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-around;
+            input{
+                background-color: $greyColor;
+                width: 60%;
+                padding: .9rem;
+                color: white;
+                border: none;
+                border-radius: .5rem;
+                &::placeholder{
+                    color: white;
+                }
+            }
+
 
         }
     }
 }
+ 
