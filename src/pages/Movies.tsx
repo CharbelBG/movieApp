@@ -1,11 +1,8 @@
 import {useState, useEffect} from 'react';
 import styles from "./movies.module.scss";
 import axios from 'axios'; 
-import MoviesCard from '../components/moviesCard';
-// add some sliders
-// hot movies section
-// implement axios
-//create a card element
+import MoviesCard from '../components/MoviesCard';
+
 
 type TrendingMovie = {
     adult:boolean,
@@ -39,7 +36,7 @@ export default function Movies() {
     const renderTrending = trending.map((movie, index)=>{
         return <MoviesCard url={movie.poster_path} key={index} />
     })
-
+    console.log(trending);
 
 return(
 <>

@@ -1,9 +1,32 @@
+@import "../scss/variables.scss";
+
 .cardContainer{
     border-radius: .5rem;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
     img{
         max-width: 100%;
+        height: 100%;
+        object-fit: fill;
         border-radius: .5rem;
     }
-
+    &::after{
+        content: '';
+        border-radius: .5rem;
+        position: absolute;
+        background-image: radial-gradient(transparent 50%,$orangeColor);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: .2s;
+    }
+    &:hover::after{
+        opacity: 1;
+        transition: .2s;
+    }
 }

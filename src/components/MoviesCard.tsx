@@ -6,12 +6,10 @@ interface Props{
 
 export default function MoviesCard({url}:Props){
 
-    return(
-        <div className={styles.cardContainer}>
-            <img src={`https://image.tmdb.org/t/p/w500${url}`} alt="movieImage" />
-        </div>
-    )
+
+return(
+    <div className={styles.cardContainer}>
+        <img src={`https://image.tmdb.org/t/p/w500${url}`} alt="movieImage" />
+    </div>
+)
 }
-
-
-
