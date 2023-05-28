@@ -34,7 +34,7 @@ export default function Movies() {
     }
 
     const renderTrending = trending.map((movie, index)=>{
-        return <MoviesCard url={movie.poster_path} key={index} />
+        return <MoviesCard id={movie.id} url={movie.poster_path} key={index} />
     })
     console.log(trending);
 
