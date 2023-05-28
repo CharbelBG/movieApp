@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Base() {
  
-
+  
   return (
     <>
     <section className={styles.container}>
@@ -16,7 +16,7 @@ export default function Base() {
          </div>
         <div className={styles.navMenu}>
 
-        <NavLink to='/movies'>
+        <NavLink to='/'>
           <svg xmlns="http://www.w3.org/2000/svg" id="mdi-movie-open" viewBox="0 0 24 24"><path d="M20.84 2.18L16.91 2.96L19.65 6.5L21.62 6.1L20.84 2.18M13.97 3.54L12 3.93L14.75 7.46L16.71 7.07L13.97 3.54M9.07 4.5L7.1 4.91L9.85 8.44L11.81 8.05L9.07 4.5M4.16 5.5L3.18 5.69A2 2 0 0 0 1.61 8.04L2 10L6.9 9.03L4.16 5.5M2 10V20C2 21.11 2.9 22 4 22H20C21.11 22 22 21.11 22 20V10H2Z" /></svg>
            Movies
          </NavLink>
@@ -50,7 +50,7 @@ export default function Base() {
             Profile
           </NavLink>
 
-          <NavLink to='/'>
+          <NavLink to='/logout'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5,3H11A3,3 0 0,1 14,6V10H13V6A2,2 0 0,0 11,4H5A2,2 0 0,0 3,6V19A2,2 0 0,0 5,21H11A2,2 0 0,0 13,19V15H14V19A3,3 0 0,1 11,22H5A3,3 0 0,1 2,19V6A3,3 0 0,1 5,3M8,12H19.25L16,8.75L16.66,8L21.16,12.5L16.66,17L16,16.25L19.25,13H8V12Z" /></svg>
             Logout
           </NavLink>
@@ -62,8 +62,7 @@ export default function Base() {
             stroke="black"
             strokeWidth="2"
             strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+            strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="16" x2="12" y2="12" />
             <line x1="12" y1="8" x2="12.01" y2="8" />
@@ -89,7 +88,7 @@ export default function Base() {
                </div>
 
             </div>
-            <div>
+            <div className={styles.outletContainer}>
             <Outlet />
             </div> 
 
