@@ -37,10 +37,11 @@
     }
 
     .overview{
-        text-align: center;
         margin: 2rem auto;
+
         h2{
-            margin-bottom: 1rem;
+            margin: 1rem auto;
+            width: fit-content;
             background-image: linear-gradient(to right, $yellowColor, $orangeColor );
             color: transparent;
             background-clip: text;
@@ -137,6 +138,7 @@
             z-index: -1;
             animation: gradient 2s infinite;
         }
+
     }
 }
 

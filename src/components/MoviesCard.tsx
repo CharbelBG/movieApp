@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router';
 import styles from './moviesCards.module.scss';
+
 interface Props{
     url:string,
     id:number

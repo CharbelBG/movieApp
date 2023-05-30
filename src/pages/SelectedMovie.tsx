@@ -11,6 +11,9 @@ interface Details{
     poster:string,
     date:string,
     tagline:string,
+    language:string,
+    budget:number,
+    status:string
 }
 
 export default function SelectedMovie(){
@@ -23,7 +26,7 @@ export default function SelectedMovie(){
 
     async function getDetails(){
         const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${import.meta.env.VITE_API_KEY}`);
-        console.log(data);
+     
         setdetails({
             backdrop_path:data.backdrop_path,
             overview:data.overview,
@@ -32,6 +35,9 @@ export default function SelectedMovie(){
             poster:data.poster_path,
             date:data.release_date,
             tagline:data.tagline,
+            language:data.original_language,
+            budget:data.budget,
+            status:data.status
         })
     }
 
@@ -64,28 +70,28 @@ return(
             </div>
 
             <div>
-                <span>name</span>
-                <span>jhon wick</span>
+                <span>Language</span>
+                <span>{details?.language}</span>
             </div>
 
             <div>
-                <span>name</span>
-                <span>jhon wick</span>
+                <span>budget</span>
+                <span>{details?.budget}$</span>
             </div>
 
             <div>
-                <span>name</span>
-                <span>jhon wick</span>
+                <span>status</span>
+                <span>{details?.status}</span>
             </div>
 
         </div>
     </div> 
     
     <div className={styles.playBtn}>
-    <span>
-        Play 
-    <img src="/play.svg" alt="play" />
-    </span> 
+        <span>
+            Play 
+        <img src="/play.svg" alt="play" />
+        </span> 
     </div>
 
 </div>
