@@ -1,0 +1,36 @@
+@import "../scss/variables.scss";
+
+.container{
+    border-top: 1px solid $greyColor;
+    background-color: $blackPrimary;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    
+    div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    img{
+        height: 2rem;
+    }
+
+    span{
+        background-image: linear-gradient(to right, $yellowColor, $orangeColor);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}

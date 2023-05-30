@@ -3,8 +3,10 @@ import Base from './layout/Base';
 import Movies from './pages/Movies';
 import { register } from 'swiper/element';
 import SelectedMovie from './pages/SelectedMovie';
+import Footer from './layout/Footer';
+
+
 export default function App() {
-  
 register();
 
 return (
@@ -20,10 +22,9 @@ return (
         <Route path='profile' element={ <h1>Render Profile</h1> } />
         <Route path='info' element={ <h1>Render info</h1> } />
         <Route path='*' element={ <h1>fallback</h1> } />
-      </Route>
+      </Route>  
     </Routes>
+    <Footer />
   </>
 )
 }
-
- 
