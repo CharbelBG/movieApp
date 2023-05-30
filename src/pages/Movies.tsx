@@ -32,7 +32,8 @@ export default function Movies() {
         const {data} = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}`);
         setTrending(data?.results);
     }
-
+// poster_path:string,
+// release_date:string,
     const renderTrending = trending.map((movie, index)=>{
         return <MoviesCard id={movie.id} url={movie.poster_path} key={index} />
     })

@@ -8,6 +8,9 @@ interface Details{
     overview:string,
     runtime:number,
     title:string,
+    poster:string,
+    date:string,
+    tagline:string,
 }
 
 export default function SelectedMovie(){
@@ -20,24 +23,70 @@ export default function SelectedMovie(){
 
     async function getDetails(){
         const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${import.meta.env.VITE_API_KEY}`);
-        setdetails({backdrop_path:data.backdrop_path,
+        console.log(data);
+        setdetails({
+            backdrop_path:data.backdrop_path,
             overview:data.overview,
             runtime:data.runtime,
             title:data.title,
+            poster:data.poster_path,
+            date:data.release_date,
+            tagline:data.tagline,
         })
     }
 
 return(
 <div className={styles.container}>
     <h1>{details?.title}</h1>
-    <div className={styles.imageAndText}>
-    <img src={`https://image.tmdb.org/t/p/w500${details?.backdrop_path}`} alt="movieImg" />
-    <p>
-        {details?.overview}
-    </p>
-    </div>
     
-    <button>Play</button>
+    <div className={styles.imageAndText}>
+        <img src={`https://image.tmdb.org/t/p/w500${details?.backdrop_path}`} alt="movieImg" />
+        <p>
+            {details?.tagline}
+        </p>
+    </div>
+    <div className={styles.overview}>
+    <h2>Overview</h2>
+    <p>{details?.overview}</p>
+    </div>
+
+    <div className={styles.moivieDetails}>
+        <img src={`https://image.tmdb.org/t/p/w500${details?.poster}`} alt="posterImg" />
+        <div className={styles.stats}>
+            <div>
+                <span>Release Date</span>
+                <span>{details?.date}</span>
+            </div>
+
+            <div>
+                <span>Runtime</span>
+                <span>{details?.runtime} min</span>
+            </div>
+
+            <div>
+                <span>name</span>
+                <span>jhon wick</span>
+            </div>
+
+            <div>
+                <span>name</span>
+                <span>jhon wick</span>
+            </div>
+
+            <div>
+                <span>name</span>
+                <span>jhon wick</span>
+            </div>
+
+        </div>
+    </div> 
+    
+    <div className={styles.playBtn}>
+    <span>
+        Play 
+    <img src="/play.svg" alt="play" />
+    </span> 
+    </div>
 
 </div>
 )
