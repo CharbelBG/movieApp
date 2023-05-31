@@ -28,10 +28,13 @@ export default function Genres(){
     });
 
 return(
+<>
+<h1 className={styles.header}>Select A Genre</h1>
 <div className={styles.container}>
     {renderGenres}
     <div onClick={()=> nav('/genres/28')}  className={styles.card}>Action</div>
     <div onClick={()=> nav('/genres/16')} className={styles.card}>Animation</div>
 </div>
+</>
 );
 }
