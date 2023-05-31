@@ -30,6 +30,8 @@ export default function Genres(){
 return(
 <div className={styles.container}>
     {renderGenres}
+    <div className={styles.card}>Action</div>
+    <div className={styles.card}>Animation</div>
 </div>
 );
 }

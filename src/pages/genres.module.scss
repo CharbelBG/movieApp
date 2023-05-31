@@ -5,15 +5,27 @@
     margin: 1rem auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 1rem;
-    
+    background-image: linear-gradient(to right, $yellowColor, transparent ,$orangeColor, $yellowColor); 
+    background-size: 200%;
+    background-position: 0 100%;
+    animation: gradient 5s infinite forwards;
+
     .card{
-        border: 1px solid $greyColor;
         text-align: center;
-        padding: 5rem 4rem;
+        padding: 5rem 2rem;
         cursor: pointer;
         line-height: 0;
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: "";
+            position: absolute;
+            background-color: $blackSecondary;
+            inset: .5px;
+            z-index: -1;
+        }
     }
+
 }
 
 @media screen and (max-width:650px) {
@@ -22,4 +34,12 @@
         grid-template-columns: repeat(2,1fr);
     }
 }
-
+ 
+@keyframes gradient {
+    0%{
+        background-position: 0 center;
+    }
+    100%{
+        background-position: -200% center;
+    }   
+}
