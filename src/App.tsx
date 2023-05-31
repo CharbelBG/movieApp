@@ -4,6 +4,7 @@ import Movies from './pages/Movies';
 import { register } from 'swiper/element';
 import SelectedMovie from './pages/SelectedMovie';
 import Genres from './pages/Genres';
+import SelectedGenres from './pages/SelectedGenres';
 import Footer from './layout/Footer';
 
 export default function App() {
@@ -17,6 +18,7 @@ return (
         <Route path='/movie/:id' element={ <SelectedMovie /> } />
         <Route path='topcharts' element={ <h1>Render Charts</h1> } />
         <Route path='genres' element={ <Genres /> } />
+        <Route path='genres/:id' element={ <SelectedGenres /> } />
         <Route path='newReleases' element={ <h1>Render new releases</h1> } />
         <Route path='favorites' element={ <h1>Render favorites</h1> } />
         <Route path='profile' element={ <h1>Render Profile</h1> } />
