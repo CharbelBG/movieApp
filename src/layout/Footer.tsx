@@ -11,7 +11,7 @@ return(
     </div>
     
     <Link to ='https://github.com/CharbelBG'> 
-        created by Charbel Bou Ghzale
+        created by Charbel Bou Ghazalé
     </Link>
 </footer>
 );

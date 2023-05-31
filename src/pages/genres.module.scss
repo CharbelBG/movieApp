@@ -1,0 +1,25 @@
+@import "../scss/variables.scss";
+
+.container{
+    width: 90%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    
+    .card{
+        border: 1px solid $greyColor;
+        text-align: center;
+        padding: 5rem 4rem;
+        cursor: pointer;
+        line-height: 0;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
