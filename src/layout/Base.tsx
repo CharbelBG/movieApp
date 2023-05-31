@@ -78,13 +78,11 @@ export default function Base() {
             <div className={styles.header}>
                <input type="text" placeholder="Search..." />
                <div>
-                <span>Movies</span>
-                <span>TV Shows</span>
+                Movies 
                </div>
 
                <div>
-                <span>notifications</span>
-                <span>dark mode</span>
+                Dark Mode 
                </div>
 
             </div>

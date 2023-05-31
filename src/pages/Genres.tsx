@@ -9,7 +9,6 @@ type GenresData = {
 
 export default function Genres(){
 
-    // define the type of the state
     const [genres, setGenres] = useState<GenresData[]>([]);
 
     useEffect(()=>{

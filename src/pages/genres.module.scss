@@ -12,17 +12,23 @@
 
     .card{
         text-align: center;
-        padding: 5rem 2rem;
+        padding: 6rem 2rem;
         cursor: pointer;
         line-height: 0;
         position: relative;
         z-index: 1;
+
         &::before{
             content: "";
             position: absolute;
             background-color: $blackSecondary;
             inset: .5px;
             z-index: -1;
+            transition: 1s;
+        }
+        &:hover::before{
+            inset: 2px;
+            transition: .2s;
         }
     }
 
