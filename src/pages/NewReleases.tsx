@@ -28,7 +28,7 @@ export default function NewReleases(){
 
 return(
 <>
-    <h1>New Releases</h1>
+    <h1 className={styles.header}>New Releases</h1>
     <div className={styles.container}>
     {renderTvShows}
     </div>
