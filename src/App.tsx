@@ -4,6 +4,7 @@ import Movies from "./pages/Movies";
 import SelectedMovie from "./pages/SelectedMovie";
 import Genres from "./pages/Genres";
 import SelectedGenres from "./pages/SelectedGenres";
+import TopCharts from "./pages/TopCharts";
 import Footer from "./layout/Footer";
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
         <Route path="/" element={<Base />}>
           <Route path="" element={<Movies />} />
           <Route path="/movie/:id" element={<SelectedMovie />} />
-          <Route path="topcharts" element={<h1>Render Charts</h1>} />
+          <Route path="topcharts" element={<TopCharts />} />
           <Route path="genres" element={<Genres />} />
           <Route path="genres/:id" element={<SelectedGenres />} />
           <Route path="newReleases" element={<h1>Render new releases</h1>} />
