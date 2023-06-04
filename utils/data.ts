@@ -4,7 +4,8 @@ const data = [
       "rating": [
         -1,
         10
-      ]
+      ],
+      "color":'yellow'
     },
     {
       "day": "05-02",

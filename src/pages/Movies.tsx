@@ -36,7 +36,7 @@ export default function Movies() {
 // release_date:string,
     const renderTrending = trending.map((movie, index)=>{
         return <MoviesCard id={movie.id} url={movie.poster_path} key={index} />
-    })
+    });
 
 return(
 <>

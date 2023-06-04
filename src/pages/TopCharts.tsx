@@ -14,7 +14,7 @@ return(
   <Bar dataKey="rating" fill="orange">
     {
         data.map((entry,index)=>(
-            <Cell key={index} stroke='yellow' radius={20} />
+            <Cell key={index} stroke={entry.color ? entry.color : 'yellow' } radius={20} />
         ))
     }
   </Bar>

@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'; 
+import { useEffect } from 'react'; 
 import { useParams } from "react-router";
 import styles from './selectedGenres.module.scss';
 import axios from 'axios';
@@ -6,7 +6,6 @@ import axios from 'axios';
 export default function SelectedGenres(){
 
     const params = useParams();
-    const [movies, setMovies] = useState([]);
     
     useEffect(()=>{
        getMovies();
